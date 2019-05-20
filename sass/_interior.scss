@@ -1,0 +1,332 @@
+@import 'sass-only/app';
+@import 'sass-only/utils';
+
+/**
+ * BAILEY!
+ * Use this stylesheet. Our SASS files are getting way too large.
+ * I may have to divide this up further. Let me know if this file gets out of hand.
+ * (Out of hand = SLOC > 2000)
+ */
+
+.masthead {
+	width: 100vw;
+	height: 530px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	&.anchor-left-top { background-position: left top; }
+	&.anchor-centre-top { background-position: center top; }
+	&.anchor-right-top { background-position: right top; }
+	&.anchor-left-centre { background-position: left center; }
+	&.anchor-centre-centre { background-position: center center; }
+	&.anchor-right-centre { background-position: right center; }
+	&.anchor-left-bottom { background-position: left bottom; }
+	&.anchor-centre-bottom { background-position: center bottom; }
+	&.anchor-right-bottom { background-position: right bottom; }
+
+	&.meals {
+		display: none;
+
+		@media screen and (max-width: 830px) {
+			display: block;
+			height: 70px !important;
+			background-color: $primary;
+			background-image: none !important;
+		}
+	}
+}
+
+main.interior {
+	@include page();
+	padding-top: 0;
+
+	h2 {
+		padding: 27px 35px;
+		margin: 0 0 15px 0;
+		background: $primary;
+		color: #FFF;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			height: 3px;
+			width: 100%;
+			background: $secondary;
+		}
+	}
+
+	.breadcrumbs {
+		@extend %has-hr;
+		color: $grey;
+		margin: 35px 0 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+
+		span[property=itemListElement] {
+			margin: 0 9px;
+
+			&:first-child { margin-left: 0; }
+		}
+
+		a {
+			color: $primary;
+		}
+	}
+
+	.content-container {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 50px;
+		margin-bottom: 120px;
+
+		&.less-margin {
+			margin-top: 0;
+		}
+
+		aside {
+			flex: 1 2 150px;
+
+			.link-back {
+				display: inline-block;
+				background: $primary;
+				color: #FFF;
+				font-size: 0.8rem;
+				margin: 10px 0;
+				padding: 4px 8px;
+				position: relative;
+				height: 32px;
+
+				&::before {
+					content: "";
+					display: block;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 16px 15px 16px 0;
+					border-color: transparent $primary transparent transparent;
+					position: absolute;
+					left: -15px;
+					top: 0;
+				}
+
+				a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+
+			>div {
+				@extend %has-hr;
+				padding: 0 30px 25px !important;
+				margin-bottom: 25px;
+
+				&:last-child {
+					&::before,
+					&::after {
+						display: none;
+					}
+				}
+			}
+
+			.children {
+				font-size: 1rem;
+				font-family: $arial;
+				line-height: 24px;
+				color: $grey;
+
+				em {
+					color: $primary;
+					font-weight: bold;
+					font-style: normal;
+
+					&::after {
+						content: "»";
+						color: $grey;
+						margin-left: 5px;
+					}
+				}
+
+				ul {
+					list-style-type: none;
+					padding: 0;
+					margin: 0;
+
+					li {
+						a {
+							color: inherit;
+						}
+					}
+				}
+			}
+
+			.sidebar { @extend %WYSIWYG-editable; }
+		}
+
+		.content {
+			@extend %WYSIWYG-editable;
+			flex: 2 1 540px;
+			padding: 0 40px;
+
+			&.error {
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+
+			.error-page {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				padding: 0 20px;
+
+				h3.error-content {
+					color: $primary;
+					font-size: 5.5em;
+					margin: 0;
+					padding-right: 40px;
+				}
+
+				.paragraphs {
+					p {
+						margin: 0;
+					}
+				}
+			}
+
+			article {
+				margin-bottom: 35px;
+
+				.back-to-top {
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					position: relative;
+					left: 100%;
+					transform: translateX(-100%);
+					margin-top: 10px;
+					padding-right: 7px;
+					padding: 5px 11px;
+					width: 25%;
+					background: $secondary;
+					color: #FFF;
+					font-size: 0.85rem;
+					font-weight: bold;
+					cursor: pointer;
+
+					&::after {
+						@include sprite($icon-back-to-top);
+						content: "";
+						display: inline-block;
+						margin-left: 10px;
+						margin-top: 2px;
+					}
+
+					&::before {
+						content: "";
+						display: block;
+						background: $primary;
+						width: 300%;
+						height: 100%;
+						position: absolute;
+						right: 100%;
+					}
+				}
+
+				.event-header {
+					.event-feature {
+						min-height: 300px;
+						width: 100%;
+						background-size: cover;
+						background-position: center center;
+					}
+
+					h3 {
+						margin-top: 50px;
+						margin-bottom: 15px;
+					}
+				}
+
+				.event-content {
+					font-size: 0.9rem;
+
+					>p {
+						font-family: $arial;
+						line-height: 29px;
+						margin: 25px 0;
+					}
+
+					dl {
+						margin-top: 40px;
+
+						>div {
+							@extend %has-hr;
+							padding: 0px 0px 12px !important;
+							display: flex;
+							flex-wrap: wrap;
+
+							&:last-child {
+								&::before,
+								&::after {
+									display: none;
+								}
+							}
+
+							dt,
+							dd time,
+							dd {
+								font-family: $arial;
+							}
+
+							dt {
+								flex: 1 1 100px;
+								color: $primary;
+								font-weight: bold;
+								margin-top: 9px;
+								margin-right: 15px;
+							}
+
+							dd {
+								flex: 1 1 250px;
+								margin-left: 0;
+								margin-top: 3px;
+								line-height: 28px;
+
+								a {
+									font-weight: bold;
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.wsp-pages-list * {
+	list-style-type: none;
+}
+
+.wsp-pages-list>.page_item>a {
+	font-size: 29px !important;
+	padding: 9px 22px 10px 24px;
+	margin: 30px 0 10px 0;
+	display: block;
+	background: #09539c;
+	color: #FFF !important;
+}
+
+.wsp-pages-list>.page_item>ul>.page_item>a {
+	font-size: 22px !important;
+	margin-bottom: 6px;
+	display: block;
+}

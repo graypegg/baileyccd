@@ -1,0 +1,100 @@
+//
+// Fonts
+//
+
+$sans: effra, Arial, Helvetica Neue, Helvetica, sans-serif;
+$arial: Arial, Helvetica Neue, Helvetica, sans-serif;
+$serif: Georgia, serif;
+
+//
+// Define all app base specific settings
+//
+
+$primary: #09539c;
+$secondary: #52bb6a;
+$tertiary: #f2f4fa;
+$light-primary: #87bff6;
+$grey: #4d4d4f;
+
+//
+// Global properties for app
+//
+//
+
+html {
+	// Base font side for REM
+    font-size: 18px;
+}
+
+body,
+html {
+    margin: 0;
+    width: 100%;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: $sans;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.hide-in-desktop {
+	display: none !important;
+}
+
+.hide-in-mobile {
+    display: flex !important
+}
+
+.blue-btn {
+	display: inline-block;
+    position: relative;
+    z-index: 1;
+	border-radius: 6px;
+
+    a,
+	input[type=submit] {
+		display: inline-flex;
+	    align-items: center;
+    	display: block;
+    	height: 100%;
+    	width: 100%;
+    	padding: 12px 20px;
+    	color: inherit;
+    	text-decoration: none;
+   		background: $primary;
+	    color: #fff;
+	    font-size: 1.2rem;
+	    font-weight: bold;
+		border-radius: inherit;
+    }
+
+    &::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 4px;
+		height: 100%;
+		width: 100%;
+		border-radius: inherit;
+		background: $secondary;
+		z-index: -1;
+	}
+}
+
+.white-btn {
+	@extend .blue-btn;
+    max-width: 250px;
+
+	a,
+	input[type=submit] {
+		background: #FFF;
+		color: $primary !important;
+		line-height: 24px;
+		font-size: 1.1rem;
+	}
+
+	.ajax-loader { display: none !important; }
+}

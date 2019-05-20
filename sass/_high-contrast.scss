@@ -1,0 +1,467 @@
+body.contrast {
+	background: #000 !important;
+
+	p,
+	h4,
+	h3,
+	h2,
+	h1 {
+		color: #fff !important;
+	}
+
+	.a11y-toolbar {
+		ul.a11y-toolbar-list {
+			li.a11y-toolbar-list-item {
+				button {
+					&.a11y-toggle-fontsize {
+						&.active {
+							&::after {
+								border-color: transparent transparent #000 transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	header {
+		background-color: black !important;
+
+		.mobile-logo {
+			background: #000;
+		}
+
+		.menu-btn {
+			background: #FFF;
+			border: 3px solid #000;
+			margin-top: -3px;
+
+			i {
+				color: #000;
+			}
+		}
+
+		.top {
+			nav > div {
+				ul {
+					li {
+						&.menu-item-has-children {
+							ul {
+								&.sub-menu {
+									background: #000;
+
+									li:hover {
+										color: #000;
+
+										@media screen and (max-width: 1220px) {
+											color: #FFF;
+										}
+									}
+								}
+							}
+						}
+
+						a {
+							color: #fff;
+
+							@media screen and (max-width: 1220px) {
+								color: #000;
+							}
+
+							&:hover {
+								color: #000;
+								background: #fff;
+
+								@media screen and (max-width: 1220px) {
+									background: #000;
+									color: #FFF;
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.buttons {
+				.button {
+					background: #fff;
+					color: #000;
+
+					a {
+						&:hover {
+							background: #fff !important;
+						}
+					}
+
+					&.donate::before { @include sprite($icon-donate-hc); }
+					&.volunteer::before { @include sprite($icon-volunteer-hc); }
+
+					&.donate::after { background: #000; }
+					&.volunteer::after { background: #000; }
+				}
+			}
+		}
+
+		.bottom {
+			background: #000;
+
+			&::before {
+				color: #000;
+				background: img('services-arrow-hc.png') center center no-repeat;
+			}
+
+			.service-nav > div {
+				ul {
+					li {
+						&.menu-item-has-children > ul.sub-menu {
+							background: #000;
+							border: 1px solid #fff;
+
+							a {
+								color: #fff;
+							}
+						}
+
+						&.menu-item-has-children > ul.sub-menu > li.menu-item-has-children {
+								ul.sub-menu {
+									background: #fff;
+									color: #000;
+
+									li {
+										a {
+											color: #000;
+										}
+
+										&:hover {
+											background: #000;
+											color: #fff !important;
+
+											a {
+												color: inherit;
+											}
+										}
+									}
+								}
+							}
+
+						a:link:hover {
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.masthead {
+		background-image: url("http://localhost:8080/wp-content/themes/ccd/img/default-feature-hc.jpg");
+	}
+
+	.slider-container {
+		.slider {
+			.btns {
+				.btn {
+					background: #000;
+
+					&:hover {
+						background: #000;
+					}
+				}
+			}
+
+			.slides {
+				.slide {
+					.slide-content {
+						.text {
+							background: #000;
+
+							h2 {
+								color: #FFF;
+							}
+
+							p {
+								color: #FFF;
+
+								&::before {
+									background: #000;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	main {
+		&.interior {
+			.content-container {
+				aside {
+					background: #fff;
+					padding-top: 20px;
+
+					.children {
+						em {
+							color: #000;
+						}
+
+						ul {
+							li {
+								a {
+									color: #000;
+								}
+							}
+						}
+					}
+				}
+
+				.content {
+					article {
+						.back-to-top {
+							background: #fff;
+							color: #000;
+
+							&::before {
+								background: #fff;
+							}
+						}
+
+						.event-content {
+							dl {
+								color: #fff;
+							}
+
+							dl > div::before {
+								background: #fff;
+							}
+
+							dl > div {
+								dt {
+									color: #fff;
+								}
+							}
+
+							dl > div {
+								dd {
+									a {
+										color: #fff;
+									}
+								}
+							}
+						}
+					}
+
+					.error-page {
+						h3 {
+							color: #fff;
+						}
+
+						.paragraphs {
+							p {
+								color: #fff;
+
+								a {
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			h2 {
+				background: #fff;
+				color: #000 !important;
+
+				&::after {
+					background: #000;
+				}
+			}
+
+			.breadcrumbs {
+				color: #fff;
+
+				&::before {
+					background: #fff;
+				}
+
+				span {
+					color: #fff;
+				}
+			}
+		}
+
+		h3 {
+			&.testimonials-heading {
+				color: #fff;
+
+				i.fa-pause::before {
+					color: #fff;
+				}
+
+				&::after {
+					background: #fff;
+				}
+			}
+		}
+
+		.executive-message {
+			background: #000;
+
+			.blue-btn {
+				background: #fff;
+
+				a {
+					background: #fff;
+					color: #000 !important;
+				}
+
+				&::after {
+					background: #fff;
+				}
+			}
+
+			h3 {
+				color: #fff;
+
+				&::after {
+					background: #fff;
+				}
+			}
+
+			p {
+				color: #fff;
+			}
+
+			blockquote {
+				color: #fff;
+			}
+		}
+
+		.greeter {
+			p {
+				color: #fff;
+			}
+		}
+
+		.testimonials {
+			.testimonial {
+				background: #000;
+
+				.byline {
+					color: #fff;
+
+					em {
+						color: #fff;
+					}
+				}
+
+				blockquote {
+					color: #fff;
+
+					&::before {
+						@include sprite($icon-quote-hc);
+					}
+				}
+			}
+		}
+
+		.buckets {
+			.bucket {
+				&.help::before { @include sprite($icon-help-hc); }
+				&.volunteer::before { @include sprite($icon-volunteer-large-hc); }
+				&.donate::before { @include sprite($icon-donate-large-hc); }
+
+				.content {
+					h3 {
+						color: #fff;
+					}
+
+					p {
+						color: #fff;
+					}
+
+					.blue-btn {
+						background: #fff;
+
+						a {
+							background: #fff;
+							color: #000 !important;
+						}
+
+						&::after {
+							background: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+	footer[role=contentinfo] {
+		background: #000;
+
+		.footer-content {
+			.contact {
+				.halves {
+					.left {
+						strong {
+							color: #fff;
+						}
+					}
+
+					.right {
+						strong {
+							color: #fff;
+						}
+					}
+				}
+
+				.white-btn {
+					a {
+						color: #000 !important;
+					}
+
+					&::after {
+						background: #000;
+					}
+				}
+			}
+
+			.site-map {
+				h3 {
+					color: #fff;
+				}
+			}
+
+			.form {
+				h3 {
+					color: #fff;
+				}
+
+				.white-btn {
+					input {
+						color: #000 !important;
+					}
+
+					&::after {
+						background: #000;
+					}
+				}
+
+				div.wpcf7-validation-errors {
+				    border: 2px solid #fff !important;
+				}
+			}
+		}
+
+		.footer-content > div.form {
+			label {
+				span.wpcf7-not-valid-tip {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
